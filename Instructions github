@@ -1,0 +1,12 @@
+fork them
+clone that fork onto my laptop
+git clone Url
+edit it in Atom
+git add .filename or everything
+git commit -m "comment"
+git push
+goto website and new pull request button in forked repository
+write out the request
+then wait
+
+other accept request or deny
