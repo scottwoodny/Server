@@ -1,25 +1,20 @@
 require "httparty"
-
-url = "https://miami.craigslist.org/search/sof"
-
-response = HTTParty.get url
-
-
-# puts response.body
-# p "#" * 40
 require 'nokogiri'
 
-dom = Nokogiri::HTML(response.body)
+def jobs_list
 
-# puts dom.class
-# p dom.css('a.hdrlnk')
-#
-# dom.css('a.hdrlnk').first
-#
-job_array = dom.css('a.hdrlnk')
+  url = "https://miami.craigslist.org/search/sof"
 
-job_array = dom.css('a.hdrlnk').map do |element|
-    puts element.content
+  response = HTTParty.get url
+
+  dom = Nokogiri::HTML(response.body)
+
+  job_array = dom.css('a.hdrlnk').map do |element|
+    element.content
   end
 
+end
+
 # p job_array
+# .map do |element|
+# puts element.content

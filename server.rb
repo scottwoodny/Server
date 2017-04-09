@@ -1,9 +1,10 @@
 require 'sinatra'
+require './Joblist'
 # specify two things
 
 get "/" do
- send_file "public/hello.txt"
- end
+ erb :jobs
+end
 # "Hellow World"
 # this is what executes when some one request some code
 # after the slash is the request
